@@ -1,0 +1,78 @@
+.todo-container {
+  max-width: 500px;
+  margin: 50px auto; /* по центру сторінки */
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: background 0.2s ease-in-out;
+}
+
+.todo-item:hover {
+  background: #f1f1f1;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+.delete-btn {
+  background: #ff4d4d;
+  border: none;
+  padding: 6px 10px;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.delete-btn:hover {
+  background: #e63939;
+}
+
+.muted {
+  color: gray;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.error {
+  color: #d9534f;
+  font-weight: bold;
+  margin-top: 10px;
+}
