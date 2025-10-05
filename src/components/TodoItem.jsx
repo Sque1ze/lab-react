@@ -6,13 +6,12 @@ export default function TodoItem({ todo, onDelete, onToggleLocal }) {
 
   const handleToggle = async () => {
     const next = !isCompleted;
-    setIsCompleted(next); 
+    setIsCompleted(next);
     setLoading(true);
     try {
       await onToggleLocal(todo.id, next);
-    } catch (err) {
-      console.error("Toggle error:", err); 
-      setIsCompleted(!next); 
+    } catch {
+      setIsCompleted(!next);
       alert("Failed to update task status.");
     } finally {
       setLoading(false);
@@ -21,11 +20,13 @@ export default function TodoItem({ todo, onDelete, onToggleLocal }) {
 
   const handleDelete = async () => {
     if (!confirm("Delete this task?")) return;
+    setLoading(true);
     try {
       await onDelete(todo.id);
-    } catch (err) {
-      console.error("Delete error:", err); 
+    } catch {
       alert("Failed to delete task.");
+    } finally {
+      setLoading(false);
     }
   };
 

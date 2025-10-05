@@ -1,16 +1,71 @@
-# React + Vite
+# 📝 React Todo List — Лабораторна робота №4  
+**Автор:** Власенко Андрій  
+**Група:** КН-311  
+**GitHub:** [https://github.com/Sque1ze/lab-react.git](https://github.com/Sque1ze/lab-react.git)  
+**Vercel:** [https://lab-react-beta.vercel.app/](https://lab-react-beta.vercel.app/)  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🎯 Мета роботи
+Розробити вебзастосунок **Todo List** з використанням **React** та **кастомного хука `useTodos`**, який реалізує логіку CRUD-операцій через фейковий REST API **DummyJSON**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ⚙️ Використані технології
+- **React 19 + Vite**
+- **JavaScript (ES6+)**
+- **CSS3 (Flexbox, сучасне оформлення)**
+- **DummyJSON REST API**
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📦 Структура проєкту
+📁 src/
+┣ 📁 components/
+┃ ┣ 📄 AddTodoForm.jsx
+┃ ┣ 📄 TodoItem.jsx
+┃ ┗ 📄 TodoList.jsx
+┣ 📁 hooks/
+┃ ┗ 📄 useTodos.js
+┣ 📁 assets/
+┃ ┗ 📄 A_diagram_created_digitally_showcases_the_componen.png
+┣ 📄 App.jsx
+┣ 📄 main.jsx
+┗ 📄 index.css
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 Компонентна структура та потік даних
+
+![Data Flow Diagram](./src/assets/A_diagram_created_digitally_showcases_the_componen.png)
+
+### 🔍 Опис
+1. **App.jsx** — головний компонент програми, що рендерить `<TodoList />`.  
+2. **TodoList.jsx** — використовує кастомний хук `useTodos` і передає дані та колбеки дочірнім компонентам.  
+3. **AddTodoForm.jsx** — містить форму для додавання нової задачі.  
+4. **TodoItem.jsx** — відображає окрему задачу з можливістю видалення або позначення як виконаної.  
+5. **useTodos.js** — обробляє логіку запитів до API:
+   - `GET /todos` — отримання списку
+   - `POST /todos/add` — додавання
+   - `PUT /todos/:id` — оновлення статусу
+   - `DELETE /todos/:id` — видалення
+
+### 🔄 Потік даних
+- ⬇️ **Пропси вниз:** від `TodoList` → до `TodoItem` та `AddTodoForm`  
+- ⬆️ **Події вгору:** колбеки (onAdd, onToggle, onDelete) передаються назад у хук  
+- 🔁 **useTodos** — центральна логіка управління станом і взаємодії з API  
+
+---
+
+## 🚀 Як запустити проєкт локально
+
+```bash
+# 1. Клонувати репозиторій
+git clone https://github.com/Sque1ze/lab-react.git
+
+# 2. Перейти в папку проєкту
+cd lab-react
+
+# 3. Встановити залежності
+npm install
+
+# 4. Запустити застосунок
+npm run dev

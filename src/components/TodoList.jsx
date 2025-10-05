@@ -11,14 +11,11 @@ export default function TodoList() {
     <div className="todo-container">
       <h2 className="title">My To-Do List</h2>
 
-      {/* Форма додавання задач */}
       <AddTodoForm onAdd={addTodo} />
 
-      {/* Стан завантаження та помилки */}
       {isLoading && <div className="muted">Loading...</div>}
-      {error && <div className="error">Error: {String(error)}</div>}
+      {error && <div className="error">Error: {error}</div>}
 
-      {/* Список задач */}
       <ul className="todo-list">
         {todos.length === 0 && !isLoading ? (
           <li className="muted">No tasks yet — add one!</li>
