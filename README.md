@@ -1,4 +1,4 @@
-# 📝 React Todo List — Лабораторна робота №4  
+# 📝 React Todo List — Лабораторна робота №5-6
 **Автор:** Власенко Андрій  
 **Група:** КН-311  
 **GitHub:** [https://github.com/Sque1ze/lab-react.git](https://github.com/Sque1ze/lab-react.git)  
